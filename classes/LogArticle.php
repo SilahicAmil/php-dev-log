@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Log Article
+ * 
+ * Get information for dev log articles
+ */
 class LogArticle
 {
     /** 
