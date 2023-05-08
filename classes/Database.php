@@ -3,9 +3,12 @@
 class Database
 {
 
-    // get the database connection
-
-    public function getDatabaseConnection()
+    /**
+     * Establishes a Database Connection
+     * 
+     * @return PDO object Connection to the Database
+     */
+    public function getDatabaseConnection(): object
     {
         $db_host = "localhost";
         $db_name = "dev_log";

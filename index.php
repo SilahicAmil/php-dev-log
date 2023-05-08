@@ -1,5 +1,6 @@
 <?php
 $conn = require "includes/db.php";
+require "classes/LogArticle.php";
 
 // have to use these since my ini is messed up
 ini_set('display_errors', 1);
@@ -7,24 +8,16 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-$sql = "SELECT * FROM logs ORDER BY published_at";
+$all_logs = LogArticle::getAllDevLogs($conn);
 
-$query = $conn->query($sql);
-
-
-
-
-
-$results = $query->fetchAll(PDO::FETCH_ASSOC);
-
-var_dump($results);
+var_dump($all_logs);
 
 
 ?>
 
 <?php require "includes/header.php" ?>
 <div id="article-container">
-    <?php foreach ($results as $article) : ?>
+    <?php foreach ($all_logs as $article) : ?>
         <article>
             <h2><?= $article["title"] ?></h2>
             <span><?= $article["published_at"] ?></span>
