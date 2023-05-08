@@ -2,3 +2,19 @@ body {
   background-color: #ccc;
   color: black;
 }
+
+#article-container {
+  background-color: antiquewhite;
+  width: 400px;
+  height: 400px;
+
+  margin: auto;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
