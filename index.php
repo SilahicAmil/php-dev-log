@@ -19,14 +19,12 @@ var_dump($results);
 ?>
 
 <?php require "includes/header.php" ?>
-<div>
+<div></div>
+<?php foreach ($results as $article) : ?>
     <article>
-        <h2>This is the title</h2>
-        <p>This is the content</p>
+        <h2><?= $article["title"] ?></h2>
+        <p><?= $article["content"] ?></p>
     </article>
-
-    <article>
-        <h2><?= $results["title"] ?></h2>
-    </article>
+<?php endforeach; ?>
 </div>
 <?php require "includes/footer.php" ?>
