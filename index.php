@@ -1,3 +1,11 @@
 <?php
+echo "Hello from the server";
+?>
 
-print "Hello World";
+<?php require "includes/header.php" ?>
+<ul>
+    <li>
+        List 1
+    </li>
+</ul>
+<?php require "includes/footer.php" ?>
