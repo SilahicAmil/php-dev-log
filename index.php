@@ -12,6 +12,7 @@ $all_logs = LogArticle::getAllDevLogs($conn);
 
 var_dump($all_logs);
 
+echo "<br>";
 
 ?>
 
