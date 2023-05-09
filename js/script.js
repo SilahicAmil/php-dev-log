@@ -2,12 +2,14 @@ console.log("hello world");
 
 $(document).ready(function () {
   $("#show-more-text").hide();
-  $("#hide-content").click(function () {
-    $("#hide").toggle();
-    console.log("toogl");
-  });
 
   $("#show-more-content").click(function () {
     $("#show-more-text").toggle();
+  });
+
+  $("#sidebar-menu-hidden-text").hide();
+  $("#change-css-button").click(function () {
+    $("#sidebar-menu").css({ height: "800px" });
+    $("#sidebar-menu-hidden-text").show();
   });
 });

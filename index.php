@@ -16,12 +16,18 @@ var_dump($all_logs);
 <?php require "includes/header.php" ?>
 <a href="new_log.php">New Dev Log Article</a>
 <div class="index-wrapper">
-    <div class="left-sidebar-menu">
+    <div class="left-sidebar-menu" id="sidebar-menu">
         <img src="images/updated-profile.png" alt="Headshot Photo" class="sidebar-img">
         <div>
             <h2>Amil Silahic</h2>
             <p>Web Developer</p>
+
         </div>
+        <p id="sidebar-menu-hidden-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat expedita ex
+            nihil totam eveniet veniam
+            adipisci, culpa pariatur eius explicabo perferendis atque dolore nisi eaque tenetur rerum asperiores earum
+            illo!</p>
+        <button id="change-css-button">Change CSS</button>
     </div>
     <div class="article-container">
         <?php foreach ($all_logs as $article) : ?>
