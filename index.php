@@ -15,10 +15,13 @@ var_dump($all_logs);
 
 <?php require "includes/header.php" ?>
 <a href="new_log.php">New Dev Log Article</a>
+<h2 id="hide">Hidden Text</h2>
+<button id="hide_content">Hide Text</button>
+
 <div id="article-container">
     <?php foreach ($all_logs as $article) : ?>
         <article>
-            <h2><?= $article["title"] ?></h2>
+            <h2 </h2><?= $article["title"] ?></h2>
             <span><?= $article["published_at"] ?></span>
             <p><?= $article["content"] ?></p>
         </article>
