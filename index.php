@@ -13,9 +13,6 @@ $all_logs = LogArticle::getAllDevLogs($conn);
 var_dump($all_logs);
 
 
-
-
-
 ?>
 
 <?php require "includes/header.php" ?>

@@ -32,10 +32,16 @@ class LogArticle
 
     // validate article method (protected method)
 
-
-    public function createDevLogArticle(object $conn): void
+    // create article method
+    public function createDevLogArticle(object $conn): bool
     {
-        // create article method
+        // KEY POINT TO REMEMBER
+        // FOR PREPARED STATEMENTS
+        // STEPS ARE
+        // 1. PREPARE THE STATEMTN
+        // 2. BIND THE VALUES
+        // 3. EXECUTE
+
         $sql = "INSERT INTO logs (title, content, published_at)
                  VALUES (:title, :content, :published_at)";
         // prepare
@@ -52,7 +58,11 @@ class LogArticle
         }
 
         // execute
-        return $stmt->execute();
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // update article method

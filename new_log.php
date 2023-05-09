@@ -1,5 +1,5 @@
 <?php
-$conn = require "includes/db.php";
+
 require "classes/LogArticle.php";
 
 
@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 $article = new LogArticle();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    $conn = require "includes/db.php";
     // this is like when using useRef in react to
     // set values for the form
     $article->title = $_POST["title"];
@@ -30,17 +30,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label for="title">Title</label>
         <!-- name is key here for getting value (equivalent to ref={} in react) -->
-        <input type="text" name="title" id="title" placeholder="Article Title" value="<?= htmlspecialchars($article->title) ?>">
+        <input type="text" name="title" id="title" placeholder="Article Title" value="<?= htmlspecialchars($article->title ?? "") ?>">
     </div>
 
     <div>
         <label for="content">Content</label>
-        <textarea name="content" id="content" cols="30" rows="10" placeholder="Article Content"><?= htmlspecialchars($article->content) ?></textarea>
+        <textarea name="content" id="content" cols="30" rows="10" placeholder="Article Content"><?= htmlspecialchars($article->content ?? "") ?></textarea>
     </div>
 
     <div>
         <label for="published_at">Published At</label>
-        <input type="datetime-local" name="published_at" id="published_at" value="<?= htmlspecialchars($article->published_at) ?>">
+        <input type="datetime-local" name="published_at" id="published_at" value="<?= htmlspecialchars($article->published_at ?? "") ?>">
     </div>
     <button>Save</button>
 </form>
