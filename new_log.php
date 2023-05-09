@@ -1,5 +1,6 @@
 <?php
 require "classes/LogArticle.php";
+$conn = require "includes/db.php";
 
 // have to use these since my ini is messed up
 ini_set('display_errors', 1);
@@ -9,7 +10,7 @@ error_reporting(E_ALL);
 $article = new LogArticle();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $conn = require "includes/db.php";
+
     // this is like when using useRef in react to
     // set values for the form
     $article->title = $_POST["title"];
@@ -22,14 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-
 ?>
 
 <?php require "includes/header.php" ?>
 
 <form method="POST">
     <div>
-
         <label for="title">Title</label>
         <!-- name is key here for getting value (equivalent to ref={} in react) -->
         <input type="text" name="title" id="title" placeholder="Article Title" value="<?= htmlspecialchars($article->title ?? "") ?>">

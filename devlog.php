@@ -13,26 +13,24 @@ if (isset($_GET["id"])) {
     $article = null;
 }
 
-
-
 ?>
 
 <?php require "includes/header.php" ?>
 <?php if ($article) : ?>
-    <div class="article-container">
-        <article>
-            <!-- -> is used for objects. since from getDevLogFromID we use PDO::CLASS we can use it here 
+<div class="article-container">
+    <article>
+        <!-- -> is used for objects. since from getDevLogFromID we use PDO::CLASS we can use it here 
         instead of the assoc array -->
-            <h2><?= htmlspecialchars($article->title ?? "") ?></h2>
-            <p><?= htmlspecialchars($article->content ?? "") ?></p>
-            <p id="show-more-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sit tempore repellat
-                molestias, earum
-                quidem qui voluptatem commodi quisquam. Nostrum, quos beatae pariatur vero voluptate perferendis corporis
-                tenetur quisquam repudiandae.</p>
-        </article>
-        <button id="show-more-content">Toggle More</button>
-    </div>
+        <h2><?= htmlspecialchars($article->title ?? "") ?></h2>
+        <p><?= htmlspecialchars($article->content ?? "") ?></p>
+        <p id="show-more-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sit tempore repellat
+            molestias, earum
+            quidem qui voluptatem commodi quisquam. Nostrum, quos beatae pariatur vero voluptate perferendis corporis
+            tenetur quisquam repudiandae.</p>
+    </article>
+    <button id="show-more-content">Toggle More</button>
+</div>
 <?php else : ?>
-    <p>No Article Found! :(</p>
+<p>No Article Found! :(</p>
 <?php endif; ?>
 <?php require "includes/footer.php" ?>
