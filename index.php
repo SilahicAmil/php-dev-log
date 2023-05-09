@@ -12,11 +12,14 @@ $all_logs = LogArticle::getAllDevLogs($conn);
 
 var_dump($all_logs);
 
-echo "<br>";
+
+
+
 
 ?>
 
 <?php require "includes/header.php" ?>
+<a href="new_log.php">New Dev Log Article</a>
 <div id="article-container">
     <?php foreach ($all_logs as $article) : ?>
         <article>
