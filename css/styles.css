@@ -1,6 +1,28 @@
 body {
   background-color: #ccc;
   color: black;
+  margin: 0;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar-items {
+  display: flex;
+  gap: 24px;
+  list-style-type: none;
+}
+
+.navbar-items li {
+  background-color: white;
+  color: black;
+  padding: 6px;
+  border-radius: 6px;
 }
 
 .index-wrapper {

@@ -9,8 +9,6 @@ error_reporting(E_ALL);
 
 $all_logs = LogArticle::getAllDevLogs($conn);
 
-echo "Navbar Should Go Here"
-
 ?>
 
 <?php require "includes/header.php" ?>
