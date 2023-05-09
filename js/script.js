@@ -9,7 +9,6 @@ $(document).ready(function () {
 
   $("#sidebar-menu-hidden-text").hide();
   $("#change-css-button").click(function () {
-    $("#sidebar-menu").css({ height: "800px" });
-    $("#sidebar-menu-hidden-text").show();
+    $("#sidebar-menu-hidden-text").toggle();
   });
 });
