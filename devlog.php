@@ -21,6 +21,8 @@ if (isset($_GET["id"])) {
 <?php if ($article) : ?>
     <div class="article-container">
         <article>
+            <!-- -> is used for objects. since from getDevLogFromID we use PDO::CLASS we can use it here 
+        instead of the assoc array -->
             <h2><?= htmlspecialchars($article->title ?? "") ?></h2>
             <p><?= htmlspecialchars($article->content ?? "") ?></p>
             <p id="show-more-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sit tempore repellat

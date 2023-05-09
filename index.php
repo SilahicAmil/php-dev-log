@@ -9,11 +9,12 @@ error_reporting(E_ALL);
 
 $all_logs = LogArticle::getAllDevLogs($conn);
 
-var_dump($all_logs);
+echo "Navbar Should Go Here"
 
 ?>
 
 <?php require "includes/header.php" ?>
+<!-- should only be visible if logged in -->
 <a href="new_log.php">New Dev Log Article</a>
 <div class="index-wrapper">
     <div class="left-sidebar-menu" id="left-sidebar-menu">
