@@ -29,7 +29,7 @@ class LogArticle
     }
 
     // get specific article on id method (ArticleDetails Page)
-    public static function getDevLogFromID(object $conn, int $id): object | null
+    public static function getDevLogFromID(object $conn, int $id): object | bool
     {
         $sql = "SELECT * FROM logs WHERE id = :id";
 
@@ -41,6 +41,8 @@ class LogArticle
 
         if ($stmt->execute()) {
             return $stmt->fetch();
+        } else {
+            return false;
         }
     }
 
