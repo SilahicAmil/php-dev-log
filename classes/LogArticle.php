@@ -46,7 +46,7 @@ class LogArticle
         }
     }
 
-    // validate article method (protected method)
+    // validate article method (protected method) 
 
     // create article method
     public function createDevLogArticle(object $conn): bool
@@ -82,6 +82,12 @@ class LogArticle
     }
 
     // update article method
+    public function updateDevLogArticle(object $conn)
+    {
+        // prepare
+        // bind
+        // execute
+    }
 
     // delete article (public method)
     public function deleteDevLogArticle(object $conn): bool
