@@ -82,4 +82,20 @@ class LogArticle
     }
 
     // update article method
+
+    // delete article (public method)
+    public function deleteDevLogArticle(object $conn): bool
+    {
+
+        $sql = "DELETE FROM logs WHERE id = :id";
+
+        // prepare
+        $stmt = $conn->prepare($sql);
+
+        // bind
+        $stmt->bindValue(":id", $this->id, PDO::PARAM_STR);
+        // execute - dont need if statement here
+        // since we were deleting and not retrieving any values
+        return $stmt->execute();
+    }
 }

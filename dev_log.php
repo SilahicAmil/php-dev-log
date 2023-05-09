@@ -27,7 +27,7 @@ if (isset($_GET["id"])) {
                 molestias, earum
                 quidem qui voluptatem commodi quisquam. Nostrum, quos beatae pariatur vero voluptate perferendis corporis
                 tenetur quisquam repudiandae.</p>
-            <a href="delete_log.php">Delete Log</a>
+            <a href="delete_log.php?id=<?= $article->id ?>">Delete Log</a>
         </article>
         <button id="show-more-content">Toggle More</button>
 
