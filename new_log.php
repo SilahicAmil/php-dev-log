@@ -18,7 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $article->content = $_POST["content"];
     $article->published_at = $_POST["published_at"];
 
-    $article->createDevLogArticle($conn);
+    if ($article->createDevLogArticle($conn)) {
+        // this should also redirect back to index.php when created
+        header("Location: index.php");
+    }
 }
 
 
