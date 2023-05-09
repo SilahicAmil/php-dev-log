@@ -19,7 +19,7 @@ if (isset($_GET["id"])) {
 
 <?php require "includes/header.php" ?>
 <?php if ($article) : ?>
-    <div>
+    <div class="article-container">
         <article>
             <h2><?= htmlspecialchars($article->title ?? "") ?></h2>
             <p><?= htmlspecialchars($article->content ?? "") ?></p>

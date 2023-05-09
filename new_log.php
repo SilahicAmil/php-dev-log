@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <?php require "includes/header.php" ?>
+
 <form method="POST">
     <div>
 
@@ -45,4 +46,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <button>Save</button>
 </form>
+
 <?php require "includes/footer.php" ?>
