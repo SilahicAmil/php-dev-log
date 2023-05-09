@@ -4,17 +4,17 @@ body {
 }
 
 #article-container {
-  background-color: antiquewhite;
+  background-color: black;
   width: 400px;
   height: 400px;
-
   margin: auto;
 }
 
-article {
+#article {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+  gap: 12px;
 }

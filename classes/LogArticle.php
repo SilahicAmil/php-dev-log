@@ -29,6 +29,20 @@ class LogArticle
     }
 
     // get specific article on id method (ArticleDetails Page)
+    public static function getDevLogFromID(object $conn, int $id): object | null
+    {
+        $sql = "SELECT * FROM logs WHERE id = :id";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        // Second Argument here is the CLASS NAME OF THE FILE
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "LogArticle");
+
+        if ($stmt->execute()) {
+            return $stmt->fetch();
+        }
+    }
 
     // validate article method (protected method)
 
