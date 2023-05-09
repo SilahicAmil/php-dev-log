@@ -1,7 +1,5 @@
 <?php
-
 require "classes/LogArticle.php";
-
 
 // have to use these since my ini is messed up
 ini_set('display_errors', 1);
