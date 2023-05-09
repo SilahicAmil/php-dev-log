@@ -14,11 +14,14 @@ var_dump($all_logs);
 ?>
 
 <?php require "includes/header.php" ?>
+<a href="new_log.php">New Dev Log Article</a>
 <div class="index-wrapper">
     <div class="left-sidebar-menu">
-        <a href="new_log.php">New Dev Log Article</a>
-        <h2 id="hide">Hidden Text</h2>
-        <button id="hide-content">Hide Text</button>
+        <img src="images/updated-profile.png" alt="Headshot Photo" class="sidebar-img">
+        <div>
+            <h2>Amil Silahic</h2>
+            <p>Web Developer</p>
+        </div>
     </div>
     <div class="article-container">
         <?php foreach ($all_logs as $article) : ?>
