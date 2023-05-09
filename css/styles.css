@@ -3,18 +3,26 @@ body {
   color: black;
 }
 
-#article-container {
-  background-color: black;
-  width: 400px;
-  height: 400px;
-  margin: auto;
+.index-wrapper {
+  display: flex;
+  margin-top: 24px;
 }
 
-#article {
+.left-sidebar-menu {
+  flex: 1;
+  width: 500px;
+}
+
+.article-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  gap: 12px;
+
+  flex: 2;
+}
+
+.index-article {
+  background-color: aliceblue;
+  display: flex;
+  margin-bottom: 12px;
+  flex-direction: column;
 }
