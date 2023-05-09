@@ -30,7 +30,7 @@ $all_logs = LogArticle::getAllDevLogs($conn);
     <div class="article-container">
         <?php foreach ($all_logs as $article) : ?>
             <article class="index-article">
-                <h2><a href="devlog.php?id=<?= $article["id"] ?>"><?= $article["title"] ?></a></h2>
+                <h2><a href="dev_log.php?id=<?= $article["id"] ?>"><?= $article["title"] ?></a></h2>
                 <span><?= $article["published_at"] ?></span>
                 <p><?= $article["content"] ?></p>
             </article>
