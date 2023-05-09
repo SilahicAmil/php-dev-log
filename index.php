@@ -20,7 +20,7 @@ var_dump($all_logs);
         <img src="images/updated-profile.png" alt="Headshot Photo" class="left-sidebar-img">
         <div class="left-sidebar-menu-info">
             <h2>Amil Silahic</h2>
-            <p>Web Developer</p>
+            <span>Web Developer</span>
         </div>
         <p id="sidebar-menu-hidden-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat expedita ex
             nihil totam eveniet veniam

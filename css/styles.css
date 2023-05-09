@@ -28,13 +28,19 @@ body {
 
 .left-sidebar-menu-info {
   text-align: center;
+  margin-bottom: 24px;
 }
 
 .left-sidebar-menu-info h2 {
   font-size: 32px;
+  font-weight: bold;
+}
+.left-sidebar-menu-info span {
+  font-size: 24px;
+  font-weight: 200;
 }
 .left-sidebar-menu-info p {
-  font-size: 24px;
+  font-size: 12px;
 }
 
 .article-container {
