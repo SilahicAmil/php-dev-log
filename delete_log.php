@@ -30,6 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <?php require "includes/header.php"; ?>
 <form method="POST">
-    <button>Delete Log</button>
+    <button type="submit" class="btn btn-danger">Delete Log</button>
 </form>
 <?php require "includes/footer.php"; ?>
