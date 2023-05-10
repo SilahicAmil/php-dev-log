@@ -13,11 +13,11 @@ $all_logs = LogArticle::getAllDevLogs($conn);
 
 <?php require "includes/header.php" ?>
 <div class="container-fluid">
-    <div class="mb-5 mt-5">
+    <div class="mb-5 mt-5 bg-dark text-white rounded">
         <div class="d-flex-col">
 
             <h2 class="fs-1 text-center">Amil Silahic</h2>
-            <p class="fs-4 text-center">Web Developer</p>
+            <p class="fs-4 text-center">SWE / Web Developer</p>
 
             <p id="sidebar-menu-hidden-text" class="fs-5 text-center">I am a Software Engineer / Web Developer.
                 Check
