@@ -12,8 +12,6 @@ $all_logs = LogArticle::getAllDevLogs($conn);
 ?>
 
 <?php require "includes/header.php" ?>
-<!-- should only be visible if logged in -->
-<a href="new_log.php">New Dev Log Article</a>
 <div class="index-wrapper">
     <div class="left-sidebar-menu" id="left-sidebar-menu">
         <img src="images/updated-profile.png" alt="Headshot Photo" class="left-sidebar-img">
@@ -21,11 +19,10 @@ $all_logs = LogArticle::getAllDevLogs($conn);
             <h2>Amil Silahic</h2>
             <span>Web Developer</span>
         </div>
-        <p id="sidebar-menu-hidden-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat expedita ex
-            nihil totam eveniet veniam
-            adipisci, culpa pariatur eius explicabo perferendis atque dolore nisi eaque tenetur rerum asperiores earum
-            illo!</p>
-        <button id="change-css-button">Show More</button>
+        <p id="sidebar-menu-hidden-text" class="fs-6 w-75 text-center">I am a Software Engineer / Web Developer. Check
+            out some
+            of my ramblings!</p>
+        <button id="change-css-button" class="btn btn-primary">Show More</button>
     </div>
     <div class="article-container">
         <?php foreach ($all_logs as $article) : ?>

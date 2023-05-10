@@ -28,22 +28,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php require "includes/header.php" ?>
 
 <form method="POST">
-    <div>
-        <label for="title">Title</label>
-        <!-- name is key here for getting value (equivalent to ref={} in react) -->
-        <input type="text" name="title" id="title" placeholder="Article Title" value="<?= htmlspecialchars($article->title ?? "") ?>">
+    <div class="d-flex-col m-auto w-50">
+        <div class="mb-3">
+            <label for="title">Title</label>
+            <!-- name is key here for getting value (equivalent to ref={} in react) -->
+            <input type="text" name="title" id="title" placeholder="Article Title" value="<?= htmlspecialchars($article->title ?? "") ?>" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="content">Content</label>
+            <textarea name="content" id="content" cols="30" rows="10" placeholder="Article Content" class="form-control"><?= htmlspecialchars($article->content ?? "") ?></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="published_at">Published At</label>
+            <input type="datetime-local" name="published_at" id="published_at" value="<?= htmlspecialchars($article->published_at ?? "") ?>" class="form-control">
+        </div>
+        <div class="d-flex justify-content-end"> <button type="submit" class="btn btn-success w-25 p-3">Create</button>
+        </div>
     </div>
-
-    <div>
-        <label for="content">Content</label>
-        <textarea name="content" id="content" cols="30" rows="10" placeholder="Article Content"><?= htmlspecialchars($article->content ?? "") ?></textarea>
-    </div>
-
-    <div>
-        <label for="published_at">Published At</label>
-        <input type="datetime-local" name="published_at" id="published_at" value="<?= htmlspecialchars($article->published_at ?? "") ?>">
-    </div>
-    <button>Save</button>
 </form>
+
+
 
 <?php require "includes/footer.php" ?>
