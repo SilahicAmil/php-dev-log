@@ -21,10 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // this should also redirect back to index.php when created
         header("Location: index.php");
     }
-
-    if (!empty($article->errors)) {
-        echo "Please Enter Valid Inputs";
-    }
 }
 
 ?>
@@ -33,6 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="POST">
     <div class="d-flex-col m-auto w-75 mt-5">
+        <div class="mb-4">
+            <?php if (!empty($article->errors)) : ?>
+                <h3>Please Enter Valid Inputs!</h3>
+            <?php endif; ?>
+        </div>
         <div class="mb-3">
             <label for="title" class="fs-5">Title</label>
             <!-- name is key here for getting value (equivalent to ref={} in react) -->
