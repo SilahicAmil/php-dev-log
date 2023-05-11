@@ -31,9 +31,6 @@ $article_contents = file_get_contents($article_url);
 $decoded_article = json_decode($article_contents, true);
 
 
-
-
-
 ?>
 
 <?php require "includes/header.php" ?>
@@ -44,7 +41,7 @@ $decoded_article = json_decode($article_contents, true);
         instead of the assoc array -->
             <h2><?= htmlspecialchars($article->title ?? "") ?></h2>
             <p><?= htmlspecialchars($article->content ?? "") ?></p>
-
+            <h2>Description</h2>
             <?php foreach ($decoded_article["posts"] as $val) : ?>
                 <?php if ($val["id"] == $article->id) : ?>
                     <p class="fs-4 mt-4"></p><?= $val["body"] ?></p>
