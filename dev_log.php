@@ -24,6 +24,15 @@ $comments_contents =  file_get_contents($comments_url);
 $decoded_json = json_decode($comments_contents, true);
 
 
+$article_url = "https://dummyjson.com/posts";
+
+$article_contents = file_get_contents($article_url);
+
+$decoded_article = json_decode($article_contents, true);
+
+
+
+
 
 ?>
 
@@ -35,6 +44,12 @@ $decoded_json = json_decode($comments_contents, true);
         instead of the assoc array -->
             <h2><?= htmlspecialchars($article->title ?? "") ?></h2>
             <p><?= htmlspecialchars($article->content ?? "") ?></p>
+
+            <?php foreach ($decoded_article["posts"] as $val) : ?>
+                <?php if ($val["id"] == $article->id) : ?>
+                    <p class="fs-4 mt-4"></p><?= $val["body"] ?></p>
+                <?php endif; ?>
+            <?php endforeach; ?>
             <p id="show-more-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sit tempore repellat
                 molestias, earum
                 quidem qui voluptatem commodi quisquam. Nostrum, quos beatae pariatur vero voluptate perferendis corporis
@@ -43,9 +58,9 @@ $decoded_json = json_decode($comments_contents, true);
             <button id="show-more-content" class="btn btn-primary">Toggle More</button>
         </article>
 
-        <?php foreach ($decoded_json["comments"] as $idx => $val) : ?>
+        <?php foreach ($decoded_json["comments"] as $val) : ?>
             <?php if ($val["id"] == $article->id) : ?>
-                <p><?= $val["user"]["username"] . ": " . $val["body"] ?></p>
+                <p class="fs-4 mt-4"></p><?= $val["user"]["username"] . ": " . $val["body"] ?></p>
             <?php endif; ?>
         <?php endforeach; ?>
     </div>
