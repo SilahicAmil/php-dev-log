@@ -13,6 +13,10 @@ if (isset($_GET["id"])) {
     $article = null;
 }
 
+
+// fetch comments from an api dummyjson
+// and display under post w/ styling
+
 ?>
 
 <?php require "includes/header.php" ?>
