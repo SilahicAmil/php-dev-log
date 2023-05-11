@@ -12,6 +12,8 @@ class LogArticle
     public $content;
     public $published_at;
 
+    public $errors = [];
+
     /** 
      * Fetch all Dev Logs
      * 
@@ -46,47 +48,58 @@ class LogArticle
         }
     }
 
-    // validate article method (protected method) 
+    // update article method
 
     // create article method
-    public function createDevLogArticle(object $conn): bool
+    public function createDevLogArticle(object $conn)
     {
-        // KEY POINT TO REMEMBER
-        // FOR PREPARED STATEMENTS
-        // STEPS ARE
-        // 1. PREPARE THE STATEMTN
-        // 2. BIND THE VALUES
-        // 3. EXECUTE
+        if ($this->validateDevLogArticle()) {
+            // KEY POINT TO REMEMBER
+            // FOR PREPARED STATEMENTS
+            // STEPS ARE
+            // 1. PREPARE THE STATEMTN
+            // 2. BIND THE VALUES
+            // 3. EXECUTE
 
-        $sql = "INSERT INTO logs (title, content, published_at)
+            $sql = "INSERT INTO logs (title, content, published_at)
                  VALUES (:title, :content, :published_at)";
-        // prepare
-        $stmt = $conn->prepare($sql);
-        // bind
-        $stmt->bindValue(":title", $this->title, PDO::PARAM_STR);
-        $stmt->bindValue(":content", $this->content, PDO::PARAM_STR);
+            // prepare
+            $stmt = $conn->prepare($sql);
+            // bind
+            $stmt->bindValue(":title", $this->title, PDO::PARAM_STR);
+            $stmt->bindValue(":content", $this->content, PDO::PARAM_STR);
 
 
-        if ($this->published_at == '') {
-            $stmt->bindValue(":published_at", null, PDO::PARAM_NULL);
-        } else {
-            $stmt->bindValue(":published_at", $this->published_at, PDO::PARAM_STR);
-        }
+            if ($this->published_at == '') {
+                $stmt->bindValue(":published_at", null, PDO::PARAM_NULL);
+            } else {
+                $stmt->bindValue(":published_at", $this->published_at, PDO::PARAM_STR);
+            }
 
-        // execute
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            return false;
+            // execute
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
+    // validate article method (protected method) 
 
-    // update article method
-    public function updateDevLogArticle(object $conn)
+    public function validateDevLogArticle()
     {
-        // prepare
-        // bind
-        // execute
+
+        if ($this->title == "") {
+            $this->errors[] = "Title is Required!";
+        }
+        if ($this->content == "") {
+            $this->errors[] = "Content is Required!";
+        }
+        if ($this->published_at != "") {
+            $date_time =  date_create_from_format('Y-m-d H:i:s', $this->published_at);
+        }
+
+        return empty($this->errors);
     }
 
     // delete article (public method)

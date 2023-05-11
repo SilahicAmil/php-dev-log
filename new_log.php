@@ -21,6 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // this should also redirect back to index.php when created
         header("Location: index.php");
     }
+
+    if (!empty($article->errors)) {
+        echo "Please Enter Valid Inputs";
+    }
 }
 
 ?>
