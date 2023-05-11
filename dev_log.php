@@ -14,8 +14,16 @@ if (isset($_GET["id"])) {
 }
 
 
-// fetch comments from an api dummyjson
+
 // and display under post w/ styling
+
+$comments_url = "https://dummyjson.com/comments";
+
+$comments_contents =  file_get_contents($comments_url);
+
+$decoded_json = json_decode($comments_contents, true);
+
+
 
 ?>
 
@@ -35,7 +43,11 @@ if (isset($_GET["id"])) {
             <button id="show-more-content" class="btn btn-primary">Toggle More</button>
         </article>
 
-
+        <?php foreach ($decoded_json["comments"] as $idx => $val) : ?>
+            <?php if ($val["id"] == $article->id) : ?>
+                <p><?= $val["user"]["username"] . ": " . $val["body"] ?></p>
+            <?php endif; ?>
+        <?php endforeach; ?>
     </div>
 <?php else : ?>
     <p>No Article Found! :(</p>
