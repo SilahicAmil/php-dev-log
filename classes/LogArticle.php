@@ -84,8 +84,8 @@ class LogArticle
             }
         }
     }
-    // validate article method (protected method) 
 
+    // validate article method (protected method) 
     protected function validateDevLogArticle()
     {
 
