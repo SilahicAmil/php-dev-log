@@ -48,7 +48,7 @@ class LogArticle
         }
     }
 
-    // update article method
+    // update article method - needs to be a public method
 
     // create article method
     public function createDevLogArticle(object $conn)

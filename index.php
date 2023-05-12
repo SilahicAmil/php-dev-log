@@ -24,24 +24,21 @@ $all_logs = LogArticle::getAllDevLogs($conn);
                 out some
                 of my ramblings!</p>
         </div>
-
-
     </div>
+
     <div class="row">
-
         <?php foreach ($all_logs as $article) : ?>
-            <article class="col">
-                <h2><a href="dev_log.php?id=<?= $article["id"] ?>"><?= $article["title"] ?></a></h2>
-                <?php if ($article["published_at"] == null) : ?>
-                    <p>Unknown Published Date</p>
-                <?php else : ?>
-                    <span><?= $article["published_at"] ?></span>
-                <?php endif; ?>
 
+        <article class="col">
+            <h2><a href="dev_log.php?id=<?= $article["id"] ?>"><?= $article["title"] ?></a></h2>
+            <?php if ($article["published_at"] == null) : ?>
+            <p>Unknown Published Date</p>
+            <?php else : ?>
+            <span><?= $article["published_at"] ?></span>
+            <?php endif; ?>
+        </article>
 
-            </article>
         <?php endforeach; ?>
-
     </div>
 </div>
 
