@@ -86,7 +86,7 @@ class LogArticle
     }
     // validate article method (protected method) 
 
-    public function validateDevLogArticle()
+    protected function validateDevLogArticle()
     {
 
         if ($this->title == "") {
