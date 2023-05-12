@@ -14,9 +14,6 @@ if (isset($_GET["id"])) {
 }
 
 
-
-// and display under post w/ styling
-
 $comments_url = "https://dummyjson.com/comments";
 
 $comments_contents =  file_get_contents($comments_url);
