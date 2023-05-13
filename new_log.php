@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $article->published_at = $_POST["published_at"];
 
     if ($article->createDevLogArticle($conn)) {
-        // this should also redirect back to index.php when created
+        // redirect back to index.php when created
         header("Location: index.php");
     }
 }
@@ -61,7 +61,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </div>
 </form>
-
-
 
 <?php require "includes/footer.php" ?>
