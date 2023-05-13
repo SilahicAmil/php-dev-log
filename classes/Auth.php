@@ -9,11 +9,18 @@ class Auth
     // check authentication if logged in or not
 
     // singup method
-    public function createUser()
+    public static function createUserAccount($conn, $username, $password, $email)
     {
+        // Insert into users db
+        // also take the $password and hash it w/ default
+
     }
 
-    // authenticate user
-    // password verify
+    public static function authenticateLogin($conn, $username, $password)
+    {
+        // authenticate user
+        // password verify
+        //return isset $_session["is_currently_logged_in"]
 
+    }
 }

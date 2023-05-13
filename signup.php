@@ -1,5 +1,7 @@
 <?php
 
+require "classes/Auth.php";
+
 // have to use these since my ini is messed up
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -34,4 +36,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button>Sign Up</button>
 
 </form>
+
 <?php require "includes/footer.php"; ?>
