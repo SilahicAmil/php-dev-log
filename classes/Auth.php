@@ -3,11 +3,15 @@
 class Auth
 {
 
+    public $username;
+    public $email;
+    public $password;
     // check authentication if logged in or not
 
-    // put singup method in here or maybe in auth.php idk yet
-
-
+    // singup method
+    public function createUser()
+    {
+    }
 
     // authenticate user
     // password verify
