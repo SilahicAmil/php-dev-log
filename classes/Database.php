@@ -7,7 +7,6 @@
  */
 class Database
 {
-
     /**
      * Establishes a Database Connection
      * 
