@@ -29,7 +29,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="new_log.php">new log article</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.php">signup</a>
+                    </li>
                 </ul>
             </div>
         </div>
