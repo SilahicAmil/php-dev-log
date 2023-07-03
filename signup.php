@@ -1,6 +1,8 @@
 <?php
 
+$conn = require "includes/db.php";
 require "classes/Auth.php";
+
 
 // have to use these since my ini is messed up
 ini_set('display_errors', 1);
@@ -8,9 +10,12 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo $_POST["username"];
-    echo $_POST["email"];
-    echo $_POST["password"];
+    Auth::createUserAccount(
+        $conn,
+        $_POST["username"],
+        $_POST["email"],
+        $_POST["password"]
+    );
 }
 ?>
 
