@@ -32,44 +32,44 @@ $decoded_article = json_decode($article_contents, true);
 
 <?php require "includes/header.php" ?>
 <?php if ($article) : ?>
-<div class="container">
+    <div class="container">
 
-    <article class="mt-4">
-        <!-- -> is used for objects. since from getDevLogFromID 
+        <article class="mt-4">
+            <!-- -> is used for objects. since from getDevLogFromID 
         we use PDO::CLASS we can use it here 
         instead of the assoc array -->
-        <h2><?= htmlspecialchars($article->title ?? "") ?></h2>
-        <h2 class="mt-4 fs-4">Description:</h2>
-        <!-- pre preserves white space/formatting -->
-        <pre class="fs-6 ms-4 text-justify">
+            <h2><?= htmlspecialchars($article->title ?? "") ?></h2>
+            <h2 class="mt-4 fs-4">Description:</h2>
+            <!-- pre preserves white space/formatting -->
+            <pre class="fs-6 ms-4 text-justify">
             <?= htmlspecialchars($article->content ?? "") ?>
         </pre>
 
-        <div id="show-more-text">
-            <?php foreach ($decoded_article["posts"] as $val) : ?>
+            <div id="show-more-text">
+                <?php foreach ($decoded_article["posts"] as $val) : ?>
+                    <?php if ($val["id"] == $article->id) : ?>
+                        <p class="fs-6 mt-4 ms-4"><?= $val["body"] ?></p>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+
+            <a href="delete_log.php?id=<?= $article->id ?>"><button class="btn btn-primary">Delete Log</button></a>
+            <button id="show-more-content" class="btn btn-primary">Show More</button>
+        </article>
+
+        <h3 class="mt-4 fs-4">Comments:</h3>
+
+        <?php foreach ($decoded_json["comments"] as $val) : ?>
             <?php if ($val["id"] == $article->id) : ?>
-            <p class="fs-6 mt-4 ms-4"><?= $val["body"] ?></p>
+                <p class="fs-5 mt-4 ms-4"><?= $val["user"]["username"] . ": " . $val["body"] ?></p>
             <?php endif; ?>
-            <?php endforeach; ?>
-        </div>
+        <?php endforeach; ?>
 
-        <a href="delete_log.php?id=<?= $article->id ?>"><button class="btn btn-primary">Delete Log</button></a>
-        <button id="show-more-content" class="btn btn-primary">Show More</button>
-    </article>
-
-    <h3 class="mt-4 fs-4">Comments:</h3>
-
-    <?php foreach ($decoded_json["comments"] as $val) : ?>
-    <?php if ($val["id"] == $article->id) : ?>
-    <p class="fs-5 mt-4 ms-4"><?= $val["user"]["username"] . ": " . $val["body"] ?></p>
-    <?php endif; ?>
-    <?php endforeach; ?>
-
-</div>
+    </div>
 
 <?php else : ?>
 
-<p>No Article Found! :(</p>
+    <p>No Article Found! :(</p>
 
 <?php endif; ?>
 
