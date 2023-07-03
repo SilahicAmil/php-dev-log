@@ -5,7 +5,7 @@ class Auth
 
     public $username;
     public $email;
-    public $password;
+    private $password;
     // check authentication if logged in or not
 
     // singup method
