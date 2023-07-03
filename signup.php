@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 }
 
-
 ?>
 
 <?php require "includes/header.php"; ?>
