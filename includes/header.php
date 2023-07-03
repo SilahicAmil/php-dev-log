@@ -29,9 +29,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="new_log.php">new log article</a>
                     </li>
+                    <!-- if not logged in show signup -->
                     <li class="nav-item">
                         <a class="nav-link" href="signup.php">signup</a>
                     </li>
+                    <!-- else show log in -->
                 </ul>
             </div>
         </div>
