@@ -14,7 +14,13 @@ class Auth
         // Insert into users db
         echo $username . "\n";
         echo $email . "\n";
-        echo password_hash($password, PASSWORD_DEFAULT);
+        $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
+        echo $hashed_pass . "\n";
+        if (password_verify($password, $hashed_pass)) {
+            echo "true";
+        } else {
+            echo "false";
+        }
         // also take the $password and hash it w/ default
 
     }
